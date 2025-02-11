@@ -1,0 +1,168 @@
+/* Basic reset for margin, padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Header styles with animation */
+.header {
+    background-color: #E8C1C1; /* Powder rose color */
+    color: black;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Pacifico', cursive;
+    font-size: 36px;
+    animation: bounceHeader 2s ease-in-out infinite;
+}
+
+/* Fun bouncing animation for the header */
+@keyframes bounceHeader {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Container to center content */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Event details box */
+.event-details-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Event name */
+.event-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Event description */
+.event-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #555;
+    text-align: center;
+}
+
+/* Event info (date, time, venue) */
+.event-info {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #777;
+    text-align: left;
+}
+
+/* Event details box */
+.event-details-box-content {
+    background-color: #F0F8FF; /* Light background color for the box */
+    border: 1px solid #E63946; /* Border color matching the prize */
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.event-details-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.event-details-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Prize and Register button container */
+.prize-register {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Prize text */
+.event-prize {
+    font-size: 22px;
+    font-weight: bold;
+    color: #E63946;
+}
+
+/* Register Now link */
+.register-link {
+    padding: 12px 25px;
+    background-color: #E63946;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.register-link:hover {
+    background-color: #C02D36;
+    transform: scale(1.05);
+}
+
+/* Responsive design tweaks */
+@media (max-width: 768px) {
+    .event-details-box {
+        padding: 20px;
+    }
+
+    .event-name {
+        font-size: 28px;
+    }
+
+    .event-description {
+        font-size: 16px;
+    }
+
+    .event-info {
+        font-size: 16px;
+    }
+
+    .register-link {
+        padding: 10px 20px;
+    }
+}
