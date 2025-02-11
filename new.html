@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6b8b8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #edebeb;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            margin-top: 20px;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .submit-btn {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #333;
+        }
+        .event-list {
+            display: none; 
+            margin-top: 20px;
+            width: 80%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .event {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .event:last-child {
+            border-bottom: none;
+        }
+        .view-events {
+            margin-top: 15px;
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>ENTER THE EVENT DETAILS</h3>
+        <form id="event-form">
+            <input type="text" id="event-name" placeholder="Event Name" required>
+            <input type="date" id="event-date" required>
+            <input type="time" id="start-time" placeholder="starttime"required>
+            <input type="time" id="end-time" placeholder="endtime"required>
+            <input type="text" id="event-venue" placeholder="Venue" required>
+            <input type="text" id="event-description" placeholder="Description" required>
+            <input type="number" name="registration-fee" placeholder="Registration Fee" required>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    <p class="view-events" id="view-events-link">View Organized Events</p>
+
+    <div class="event-list" id="event-list">
+        <h3>Organized Events</h3>
+        <div id="events-container">
+            <p>No events added yet.</p>
+        </div>
+    </div>
+
+    <script>
+        function formatTime(time) {
+            let [hour, minute] = time.split(":");
+            hour = parseInt(hour);
+            let ampm = hour >= 12 ? "PM" : "AM";
+            hour = hour % 12 || 12;
+            return `${hour}:${minute} ${ampm}`;
+        }
+
+        document.getElementById("event-form").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            let eventName = document.getElementById("event-name").value;
+            let eventDate = document.getElementById("event-date").value;
+            let startTime = formatTime(document.getElementById("start-time").value);
+            let endTime = formatTime(document.getElementById("end-time").value);
+            let eventVenue = document.getElementById("event-venue").value;
+            let eventDescription = document.getElementById("event-description").value;
+
+            let eventItem = document.createElement("div");
+            eventItem.classList.add("event");
+            eventItem.innerHTML = `<strong>${eventName}</strong><br>
+                                  Date: ${eventDate}<br>
+                                  Time: ${startTime} - ${endTime}<br>
+                                  Venue: ${eventVenue}<br>
+                                  Description: ${eventDescription}`;
+
+            let eventsContainer = document.getElementById("events-container");
+            if (eventsContainer.innerHTML.includes("No events added yet.")) {
+                eventsContainer.innerHTML = ""; 
+            }
+            eventsContainer.appendChild(eventItem);
+
+            document.getElementById("event-form").reset();
+        });
+
+        document.getElementById("view-events-link").addEventListener("click", function() {
+            let eventList = document.getElementById("event-list");
+            eventList.style.display = eventList.style.display === "none" || eventList.style.display === "" ? "block" : "none";
+        });
+    </script>
+</body>
+</html>
