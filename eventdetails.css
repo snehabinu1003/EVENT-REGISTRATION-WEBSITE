@@ -1,4 +1,3 @@
-/* Basic reset for margin, padding */
 * {
     margin: 0;
     padding: 0;
@@ -11,37 +10,27 @@ body {
     color: #333;
 }
 
-/* Header styles with animation */
 .header {
-    background-color: #E8C1C1; /* Powder rose color */
+    background-color: #E8C1C1; 
     color: black;
     text-align: center;
-    padding: 20px;
+    padding: 40px;
     font-family: 'Pacifico', cursive;
-    font-size: 36px;
-    animation: bounceHeader 2s ease-in-out infinite;
+    font-size: 50px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Fun bouncing animation for the header */
-@keyframes bounceHeader {
-    0% {
-        transform: translateY(0);
-    }
-    25% {
-        transform: translateY(-10px);
-    }
-    50% {
-        transform: translateY(0);
-    }
-    75% {
-        transform: translateY(-5px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+.title {
+    font-size: 60px;
+    font-family: 'Pacifico', cursive;
+    font-weight: 700;
+    color: black; 
+    letter-spacing: 2px; 
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); 
 }
 
-/* Container to center content */
+
 .container {
     display: flex;
     justify-content: center;
@@ -50,7 +39,7 @@ body {
     padding: 20px;
 }
 
-/* Event details box */
+
 .event-details-box {
     background-color: #fff;
     padding: 40px;
@@ -62,7 +51,7 @@ body {
     flex-direction: column;
 }
 
-/* Event name */
+
 .event-name {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
@@ -72,7 +61,7 @@ body {
     color: #333;
 }
 
-/* Event description */
+
 .event-description {
     font-size: 18px;
     line-height: 1.6;
@@ -81,7 +70,6 @@ body {
     text-align: center;
 }
 
-/* Event info (date, time, venue) */
 .event-info {
     font-size: 18px;
     margin-bottom: 15px;
@@ -89,29 +77,6 @@ body {
     text-align: left;
 }
 
-/* Event details box */
-.event-details-box-content {
-    background-color: #F0F8FF; /* Light background color for the box */
-    border: 1px solid #E63946; /* Border color matching the prize */
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 30px;
-}
-
-.event-details-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.event-details-description {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-}
-
-/* Prize and Register button container */
 .prize-register {
     display: flex;
     justify-content: space-between;
@@ -119,14 +84,12 @@ body {
     margin-top: 30px;
 }
 
-/* Prize text */
 .event-prize {
     font-size: 22px;
     font-weight: bold;
     color: #E63946;
 }
 
-/* Register Now link */
 .register-link {
     padding: 12px 25px;
     background-color: #E63946;
@@ -144,7 +107,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Responsive design tweaks */
+
 @media (max-width: 768px) {
     .event-details-box {
         padding: 20px;
